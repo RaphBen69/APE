@@ -1,6 +1,6 @@
 ---
 title: Fruitière Arinthod
-publishDate: 2023-01-15 00:00:00
+publishDate: 2024-05-22 00:00:00
 img: /APE/assets/fromage.jpg
 img_alt: Fruitière Arinthod
 description: |

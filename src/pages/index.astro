@@ -19,7 +19,7 @@ import ContactCTA from '../components/ContactCTA.astro';
 
 
 const events = (await getCollection('events'))
-	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+	.sort((a, b) => a.data.publishDate.valueOf() - b.data.publishDate.valueOf())
 	.slice(0, 3);
 
 const partners = (await getCollection('partners'))
@@ -50,8 +50,8 @@ const partners = (await getCollection('partners'))
 
 				<img
 					alt="Logo APE"
-					width="380"
-					height="190"
+					width="390"
+					height="195"
 					src="/APE/assets/logo ecole.jpg"
 				/>
 			</header>
