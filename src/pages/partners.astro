@@ -1,0 +1,39 @@
+---
+import { getCollection } from 'astro:content';
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import PartnersPreview from '../components/PartnersPreview.astro';
+import Hero from '../components/Hero.astro';
+import Grid from '../components/Grid.astro';
+
+const partners = (await getCollection('partners')).sort(
+	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+);
+---
+
+<BaseLayout
+	title="Nos partenariats | APE"
+	description="Nos partenariats du moment"
+>
+	<div class="stack gap-20">
+		<main class="wrapper stack gap-8">
+			<Hero
+				title="Nos partenariats"
+				tagline="Voici nos partenariats du moment"
+				align="start"
+			/>
+			<Grid variant="offset">
+				{
+					partners.map((partners) => (
+						<li>
+							<PartnersPreview project={partners} />
+						</li>
+					))
+				}
+			</Grid>
+		</main>
+		<ContactCTA />
+	</div>
+</BaseLayout>

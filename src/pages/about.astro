@@ -1,0 +1,147 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="Evènements | APE" description="Nos prochains évènements">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="Evènements"
+				tagline="Voici nos prochains évènements"
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/APE/assets/logo école.jpg"
+					alt="Logo APE"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Parcours</h2>
+				<div class="content">
+					<p>
+						Après plus de 10 ans de programmation de jeux-vidéos sur PC, mobiles, Nintendo DS, ... 
+						je me suis tourné vers le monde plus concret du bâtiment et des jumeaux numériques avec le pilotage d'objets connectés 
+						et leur représentation dans des espaces en 3D permettant de visualiser les données des bâtiments.
+					</p>
+					<br>
+					<p>
+						Mais j'ai toujours gardé un pied dans le monde du jeu vidéo en aidant un ancien collègue à réaliser des jeux multijoueurs
+						en VR pour des salles d'arcade. Finalement, ayant goût à découvrir de nouvelles choses, je me suis lancé en Freelance pour réaliser 
+						divers projets et en ayant aussi l'envie de développer mes propres jeux ou applications.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Etudes</h2>
+				<div class="content">
+					<table >
+						<tr>
+							<th>2001</th>
+							<th>DEUG Mathématiques et Informatique Appliquées aux Sciences à UCB Lyon 1 de Villeurbanne</th>
+						</tr>
+						<tr>
+							<th>2002</th>
+							<th>DUT Informatique à l'IUT A Lyon 1 de Villeurbanne</th>
+						</tr>
+						<tr>
+							<th>2005</th>
+							<th>MASTER 2 Informatique spécialité Images obtenu à l'UCB Lyon 1 de Villeurbanne</th>
+						</tr>
+					</table>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Compétences</h2>
+				<div class="content">
+					<table >
+						<tr>
+							<th>Points forts</th>
+							<th>Mathématiques, Logique, Analyse, Écoute des besoins, Réalisation, Debug</th>
+						</tr>
+						<tr>
+							<th>Langages</th>
+							<th>C#, C/C++, PHP, Symfony, API Platform, Java, Javascript, AS3, XML, SQL, HLSL</th>
+						</tr>
+						<tr>
+							<th>Logiciels</th>
+							<th>Unity 3D, Visual Studio, VS Code, Git, SVN, Perforce, FMOD, Photoshop, Maya, Word, Excel</th>
+						</tr>
+						<tr>
+							<th>Systèmes</th>
+							<th>Windows, Mac, Linux, Raspberry Pi</th>
+						</tr>
+						<tr>
+							<th>Langues</th>
+							<th>Anglais (niveau professionnel général, lu, écrit, oral)</th>
+						</tr>
+					</table>					
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>

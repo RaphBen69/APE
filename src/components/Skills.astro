@@ -1,0 +1,65 @@
+---
+import Icon from './Icon.astro';
+---
+
+<section class="box skills">
+	<div class="stack gap-2 lg:gap-4">
+		<Icon icon="terminal-window" color="var(--accent-regular)" size="2.5rem" gradient />
+		<h2>Vision en Réalité</h2>
+		<p>Ce qui me motive, c'est trouver comment retranscrire une idée, une sensation ou un comportement à l'écran</p>
+		<p>Avec Unity3D en C#, je converti votre vision en réalité sur diverses plateformes (PC, Mac, Android, Iphone, Web, Casques VR, Consoles)</p>
+	</div>
+	<div class="stack gap-2 lg:gap-4">
+		<Icon icon="trophy" color="var(--accent-regular)" size="2.5rem" gradient />
+		<h2>Du Dev à la Prod</h2>
+		<p>La chaine de prodution est importante surtout en travaillant en équipe avec du versionning, de l'intégration continue, des tests unitaires, ...</p>
+		<p>J'accompagne votre projet jusqu'à la mise en ligne (Google Play, Apple Store, Steam, ...)</p>
+	</div>
+	<div class="stack gap-2 lg:gap-4">
+		<Icon icon="strategy" color="var(--accent-regular)" size="2.5rem" gradient />
+		<h2>Satisfaction client</h2>
+		<p>Je prends en compte vos retours au fur et à mesure du développement, dans le but de vous satisfaire au mieux</p>
+		<p>J'ai suivi une formation Scrum Master et j'aime mettre en pratique la méthode Agile</p>
+	</div>
+</section>
+
+<style>
+	.box {
+		border: 1px solid var(--gray-800);
+		border-radius: 0.75rem;
+		padding: 1.5rem;
+		background-color: var(--gray-999_40);
+		box-shadow: var(--shadow-sm);
+	}
+
+	.skills {
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+	}
+
+	.skills h2 {
+		font-size: var(--text-lg);
+	}
+
+	.skills p {
+		color: var(--gray-400);
+	}
+
+	@media (min-width: 50em) {
+		.box {
+			border-radius: 1.5rem;
+			padding: 2.5rem;
+		}
+
+		.skills {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 5rem;
+		}
+
+		.skills h2 {
+			font-size: var(--text-2xl);
+		}
+	}
+</style>
