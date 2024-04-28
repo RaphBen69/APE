@@ -17,8 +17,8 @@
 	--gray-999: #ffffff;
 
 	--accent-light: #e1ae70;
-	--accent-regular: #e39637;
-	--accent-dark: #895b22;
+	--accent-regular: #e49d47;
+	--accent-dark: #874b06;
 	--accent-overlay: hsla(46, 89%, 67%, 0.33);
 	--accent-subtle-overlay: var(--accent-overlay);
 	--accent-text-over: var(--gray-999);
@@ -38,7 +38,7 @@
 	);
 	--gradient-accent-orange: linear-gradient(
 		150deg,
-		#d5ceab,
+		#cec880,
 		var(--accent-regular),
 		var(--accent-dark)
 	);
