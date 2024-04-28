@@ -38,13 +38,17 @@ const partners = (await getCollection('partners'))
 			<header class="hero">
 				<Hero
 					title="APE Ste Anne"
-					tagline="Nous sommes l'association des parents d'élèves de l'école primaire André Frénod de Sainte Anne sur Gervonde (Isère 38)"
+					tagline="L'association des parents d'élèves de l'école primaire André Frénod de Sainte Anne sur Gervonde (Isère 38)"
 					align="start"
 				>
 					<div class="roles">
-						<Pill><Icon icon="games" size="1.33em" />Finance les sorties scolaires</Pill>						
-						<Pill><Icon icon="mobile" size="1.33em" />Evènements</Pill>
-						<Pill><Icon icon="mobile" size="1.33em" />Partenariats</Pill>
+						<Pill><Icon icon="rocket-launch" size="1.33em" />Finance les sorties scolaires</Pill>
+					</div>
+					<div class="roles">
+						<Pill><Icon icon="calendar-check" size="1.33em" />Organise les évènements</Pill>
+					</div>
+					<div class="roles">
+						<Pill><Icon icon="handshake" size="1.33em" />Met en place des partenariats</Pill>
 					</div>
 				</Hero>
 
@@ -146,7 +150,8 @@ const partners = (await getCollection('partners'))
 	}
 
 	.roles {
-		display: none;
+		display: flex;
+		gap: 0.5rem;
 	}
 
 	.hero img {
@@ -166,7 +171,6 @@ const partners = (await getCollection('partners'))
 		}
 
 		.roles {
-			margin-top: 0.5rem;
 			display: flex;
 			gap: 0.5rem;
 		}
