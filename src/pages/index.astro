@@ -15,7 +15,7 @@ import EventsPreview from '../components/EventsPreview.astro';
 
 // Page section components
 import ContactCTA from '../components/ContactCTA.astro';
-//import Skills from '../components/Skills.astro';
+import Skills from '../components/Skills.astro';
 
 
 const events = (await getCollection('events'))
@@ -45,7 +45,7 @@ const partners = (await getCollection('partners'))
 						<Pill><Icon icon="rocket-launch" size="1.33em" />Finance les sorties scolaires</Pill>
 					</div>
 					<div class="roles">
-						<Pill><Icon icon="calendar-check" size="1.33em" />Organise les évènements</Pill>
+						<Pill><Icon icon="calendar-check" size="1.33em" />Organise des évènements</Pill>
 					</div>
 					<div class="roles">
 						<Pill><Icon icon="handshake" size="1.33em" />Met en place des partenariats</Pill>
@@ -59,7 +59,7 @@ const partners = (await getCollection('partners'))
 					src="/APE/assets/logo ecole.jpg"
 				/>
 			</header>
-			<!-- <Skills /> -->
+			<Skills />
 		</div>
 
 		<main class="wrapper stack gap-20 lg:gap-48">
