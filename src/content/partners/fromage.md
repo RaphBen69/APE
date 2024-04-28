@@ -1,7 +1,7 @@
 ---
-title: Ravage K1S1 - 2023
+title: Fruitière Arinthod
 publishDate: 2023-01-15 00:00:00
-img: /APE/assets/RavageK1S1.jpg
+img: /APE/assets/fromage.jpg
 img_alt: Jeux VR Ravage K1S1
 description: |
   Après "Trails of Gold" et "Kaireyhs", un jeu d'exploration futuriste a été développé par La Suite Studio : "Ravage K1S1".
