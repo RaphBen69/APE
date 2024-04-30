@@ -1,0 +1,36 @@
+---
+import { getCollection } from 'astro:content';
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import PartnersPreview from '../components/PartnersPreview.astro';
+import Hero from '../components/Hero.astro';
+import Grid from '../components/Grid.astro';
+
+const partners = (await getCollection('partners')).sort(
+	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+);
+---
+
+<BaseLayout
+	title="Le bureau | APE"
+	description="L'équipe qui compose le bureau"
+>
+	<div class="stack gap-20">
+		<main class="wrapper stack gap-8">
+			<Hero
+				title="Le bureau"
+				tagline="Voici l'équipe qui compose le bureau"
+				align="start">
+				<img
+					width="1553"
+					height="873"
+					src="/APE/assets/bureau_team.png"
+					alt="Equipe du bureau"
+				/>
+			</Hero>
+		</main>
+		<ContactCTA />
+	</div>
+</BaseLayout>
