@@ -204,6 +204,17 @@ table, th, td {
 	padding-inline: 1.5rem;
 }
 
+.role {
+	width: 100%;
+	max-width: 83rem;
+	margin-inline: auto;
+	padding-inline: 1.5rem;
+}
+
+.role h5 {
+	font-size: var(--text-1xl);
+}
+
 .stack {
 	display: flex;
 	flex-direction: column;
@@ -258,5 +269,16 @@ table, th, td {
 	}
 	.lg\:gap-48 {
 		gap: 12rem;
+	}
+
+	.role {
+		width: 100%;
+		max-width: 83rem;
+		margin-inline: auto;
+		padding-inline: 1.5rem;
+	}
+
+	.role h5 {
+		font-size: var(--text-2xl);
 	}
 }
