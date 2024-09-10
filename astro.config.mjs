@@ -4,7 +4,10 @@ import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://raphben69.github.io',
+  site: 'https://apesteanne.fr',
   base: 'APE',
-  integrations: [mdx()]
+  integrations: [mdx()],
+  redirects: {
+    '/404': '/index'
+    }
 });
