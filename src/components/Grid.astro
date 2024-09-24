@@ -36,19 +36,21 @@ const { variant } = Astro.props;
 		}
 
 		.grid.offset {
-			--row-offset: 7.5rem;
-			padding-bottom: var(--row-offset);
+			--row-offset: 10rem;
+			padding-top: var(--row-offset);
 		}
 
 		/* Shift first item in each row vertically to create staggered effect. */
 		.grid.offset > :global(:nth-child(odd)) {
-			transform: translateY(var(--row-offset));
+			--row-offset2 : -10rem;
+			transform: translateY(var(--row-offset2));
 		}
 
-		/* If last row contains only one item, display it in the second column. */
+		/* If last row contains only one item, display it in the first column. */
 		.grid.offset > :global(:last-child:nth-child(odd)) {
-			grid-column: 2 / 3;
-			transform: none;
+			grid-column: 1 / 2;
+			--row-offset3 : -10rem;
+			transform: translateY(var(--row-offset3));
 		}
 
 		.grid.small {
