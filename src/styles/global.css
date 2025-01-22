@@ -149,7 +149,8 @@ h1,
 h2,
 h3,
 h4,
-h5{
+h5,
+h6{
 	line-height: 1.1;
 	font-family: var(--font-brand);
 	font-weight: 600;
@@ -174,6 +175,10 @@ h4 {
 
 h5 {
 	font-size: var(--text-xl);
+}
+
+h6 {
+	font-size: var(--text-md);
 }
 
 table, th, td {
