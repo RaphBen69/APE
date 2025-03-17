@@ -181,7 +181,7 @@ h6 {
 	font-size: var(--text-md);
 }
 
-table, th, td {
+.tableWithBorder {
 	border: 1px solid;
 	border-collapse: collapse;
 	text-align: left;
