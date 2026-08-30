@@ -21,4 +21,9 @@ const Year2025 = defineCollection({
 	schema,
 });
 
-export const collections = { Year2024, Year2025 };
+const Year2026 = defineCollection({
+	loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/Year2026' }),
+	schema,
+});
+
+export const collections = { Year2024, Year2025, Year2026 };

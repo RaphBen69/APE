@@ -1,0 +1,400 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+
+const classes = ['PS', 'MS', 'GS', 'CP', 'CE1', 'CE2', 'CM1', 'CM2'];
+---
+
+<BaseLayout
+	title="Mise à jour des coordonnées | APE"
+	description="Mise à jour des coordonnées des familles de l'École André Frénod"
+>
+	<div class="stack gap-20">
+		<main class="wrapper stack gap-8">
+			<Hero
+				title="Mise à jour des coordonnées"
+				tagline="École André Frénod – Sainte-Anne-sur-Gervonde"
+				align="start"
+			>
+				<p>
+					Bienvenue aux familles de l'École André Frénod ! Afin de tenir à jour notre liste de
+					contacts et de vous transmettre les informations de l'APE tout au long de l'année, merci de
+					remplir ce court formulaire. ⏱️ Cela ne prend que quelques minutes !
+				</p>
+			</Hero>
+
+			<form id="family-form" class="stack gap-8" novalidate>
+				<!-- Enfant 1 -->
+				<fieldset class="section">
+					<legend>👧 Enfant 1</legend>
+					<div class="fields">
+						<label>Nom de famille de l'enfant *
+							<input type="text" name="enfant1_nom" required />
+						</label>
+						<label>Prénom de l'enfant *
+							<input type="text" name="enfant1_prenom" required />
+						</label>
+						<label>Classe *
+							<select name="enfant1_classe" required>
+								<option value="" selected disabled>Choisir…</option>
+								{classes.map((c) => <option value={c}>{c}</option>)}
+							</select>
+						</label>
+					</div>
+				</fieldset>
+
+				<!-- Fratrie -->
+				<fieldset class="section">
+					<legend>👦 Fratrie</legend>
+					<p class="q">Avez-vous un autre enfant scolarisé à l'École André Frénod ?</p>
+					<div class="choices">
+						<label class="radio"><input type="radio" name="has_child2" value="Non" checked />Non</label>
+						<label class="radio"><input type="radio" name="has_child2" value="Oui" />Oui</label>
+					</div>
+
+					<div class="child-block" data-child="2" hidden>
+						<h4>👧 Enfant 2</h4>
+						<div class="fields">
+							<label>Nom<input type="text" name="enfant2_nom" /></label>
+							<label>Prénom<input type="text" name="enfant2_prenom" /></label>
+							<label>Classe
+								<select name="enfant2_classe">
+									<option value="" selected disabled>Choisir…</option>
+									{classes.map((c) => <option value={c}>{c}</option>)}
+								</select>
+							</label>
+						</div>
+
+						<p class="q">Avez-vous un troisième enfant scolarisé dans l'école ?</p>
+						<div class="choices">
+							<label class="radio"><input type="radio" name="has_child3" value="Non" checked />Non</label>
+							<label class="radio"><input type="radio" name="has_child3" value="Oui" />Oui</label>
+						</div>
+
+						<div class="child-block" data-child="3" hidden>
+							<h4>👦 Enfant 3</h4>
+							<div class="fields">
+								<label>Nom<input type="text" name="enfant3_nom" /></label>
+								<label>Prénom<input type="text" name="enfant3_prenom" /></label>
+								<label>Classe
+									<select name="enfant3_classe">
+										<option value="" selected disabled>Choisir…</option>
+										{classes.map((c) => <option value={c}>{c}</option>)}
+									</select>
+								</label>
+							</div>
+
+							<p class="q">Avez-vous un quatrième enfant scolarisé dans l'école ?</p>
+							<div class="choices">
+								<label class="radio"><input type="radio" name="has_child4" value="Non" checked />Non</label>
+								<label class="radio"><input type="radio" name="has_child4" value="Oui" />Oui</label>
+							</div>
+
+							<div class="child-block" data-child="4" hidden>
+								<h4>👧 Enfant 4</h4>
+								<div class="fields">
+									<label>Nom<input type="text" name="enfant4_nom" /></label>
+									<label>Prénom<input type="text" name="enfant4_prenom" /></label>
+									<label>Classe
+										<select name="enfant4_classe">
+											<option value="" selected disabled>Choisir…</option>
+											{classes.map((c) => <option value={c}>{c}</option>)}
+										</select>
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+
+				<!-- Parents -->
+				<fieldset class="section">
+					<legend>👨‍👩‍👧 Coordonnées des parents</legend>
+					<div class="fields">
+						<label>Nom et prénom du parent 1 *
+							<input type="text" name="parent1_nom" required />
+						</label>
+						<label>Téléphone du parent 1 *
+							<input type="tel" name="parent1_tel" required />
+						</label>
+						<label>Adresse e-mail du parent 1 *
+							<input type="email" name="parent1_email" required />
+						</label>
+					</div>
+					<div class="fields">
+						<label>Nom et prénom du parent 2
+							<input type="text" name="parent2_nom" />
+						</label>
+						<label>Téléphone du parent 2
+							<input type="tel" name="parent2_tel" />
+						</label>
+						<label>Adresse e-mail du parent 2
+							<input type="email" name="parent2_email" />
+						</label>
+					</div>
+				</fieldset>
+
+				<!-- Communications APE -->
+				<fieldset class="section">
+					<legend>📢 Communications de l'APE</legend>
+					<p class="q">Souhaitez-vous recevoir les informations et communications de l'APE ?</p>
+					<div class="choices column">
+						<label class="radio"><input type="radio" name="comm_ape" value="Oui" required />Oui, je souhaite recevoir les communications de l'APE.</label>
+						<label class="radio"><input type="radio" name="comm_ape" value="Non" />Non, je ne souhaite pas les recevoir.</label>
+					</div>
+				</fieldset>
+
+				<!-- Nouvelle famille -->
+				<fieldset class="section">
+					<legend>🆕 Nouvelle famille</legend>
+					<p class="q">Êtes-vous une nouvelle famille au sein de l'École André Frénod ?</p>
+					<div class="choices">
+						<label class="radio"><input type="radio" name="nouvelle_famille" value="Oui" required />Oui</label>
+						<label class="radio"><input type="radio" name="nouvelle_famille" value="Non" />Non</label>
+					</div>
+				</fieldset>
+
+				<p id="form-error" class="form-error" hidden></p>
+				<button type="submit" class="submit">Envoyer</button>
+			</form>
+
+			<div id="form-success" class="success" hidden>
+				<h3>✅ Merci pour votre participation ! 😊</h3>
+				<p>
+					Vos informations permettront à l'APE de rester en contact avec les familles et de vous
+					tenir informés des différentes actions et événements de l'année scolaire.
+				</p>
+			</div>
+		</main>
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<script>
+	// Google Apps Script Web App URL (".../exec"). Left empty until the endpoint is deployed.
+	const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxNTy8pZfM752qxxtE81Hh3kFvOWyyNX1Y5eHKp8xn_VOMLfsSi-OrQ4izThWNx4a_g/exec';
+
+	const form = document.getElementById('family-form') as HTMLFormElement;
+	const success = document.getElementById('form-success')!;
+	const errorBox = document.getElementById('form-error')!;
+
+	// Show/hide a child block and toggle `required` on its direct name/first-name inputs.
+	function setBlock(block: HTMLElement, visible: boolean) {
+		block.hidden = !visible;
+		block.querySelectorAll<HTMLElement>(':scope > .fields input, :scope > .fields select').forEach((el) => {
+			const field = el as HTMLInputElement | HTMLSelectElement;
+			if (visible) {
+				if (field.tagName === 'INPUT') field.required = true;
+			} else {
+				field.required = false;
+				field.value = '';
+			}
+		});
+	}
+
+	// Cascade: child2 depends on has_child2, child3 on has_child3 (only if child2 open), etc.
+	function refresh() {
+		const c2 = (form.querySelector('input[name="has_child2"]:checked') as HTMLInputElement)?.value === 'Oui';
+		const block2 = form.querySelector('.child-block[data-child="2"]') as HTMLElement;
+		setBlock(block2, c2);
+
+		const c3 = c2 && (form.querySelector('input[name="has_child3"]:checked') as HTMLInputElement)?.value === 'Oui';
+		const block3 = form.querySelector('.child-block[data-child="3"]') as HTMLElement;
+		setBlock(block3, c3);
+
+		const c4 = c3 && (form.querySelector('input[name="has_child4"]:checked') as HTMLInputElement)?.value === 'Oui';
+		const block4 = form.querySelector('.child-block[data-child="4"]') as HTMLElement;
+		setBlock(block4, c4);
+	}
+
+	form.addEventListener('change', refresh);
+	refresh();
+
+	form.addEventListener('submit', async (e) => {
+		e.preventDefault();
+		errorBox.hidden = true;
+
+		if (!form.checkValidity()) {
+			form.reportValidity();
+			return;
+		}
+
+		if (!FORM_ENDPOINT) {
+			errorBox.textContent =
+				"Le formulaire n'est pas encore activé. Merci de réessayer plus tard ou de contacter l'APE.";
+			errorBox.hidden = false;
+			return;
+		}
+
+		const btn = form.querySelector('.submit') as HTMLButtonElement;
+		btn.disabled = true;
+		btn.textContent = 'Envoi en cours…';
+
+		try {
+			const params = new URLSearchParams();
+			new FormData(form).forEach((value, key) => params.append(key, value.toString()));
+			// Apps Script Web Apps do not return usable CORS headers; no-cors lets the write succeed.
+			await fetch(FORM_ENDPOINT, { method: 'POST', mode: 'no-cors', body: params });
+			form.hidden = true;
+			success.hidden = false;
+			success.scrollIntoView({ behavior: 'smooth' });
+		} catch (err) {
+			errorBox.textContent =
+				"Une erreur est survenue lors de l'envoi. Merci de réessayer dans quelques instants.";
+			errorBox.hidden = false;
+			btn.disabled = false;
+			btn.textContent = 'Envoyer';
+		}
+	});
+</script>
+
+<style>
+	.section {
+		border: 1px solid var(--gray-800);
+		border-radius: 1.5rem;
+		padding: 1.5rem;
+		background: var(--gradient-subtle);
+		box-shadow: var(--shadow-sm);
+	}
+
+	legend {
+		font-family: var(--font-brand);
+		font-weight: 600;
+		font-size: var(--text-lg);
+		color: var(--gray-0);
+		padding: 0 0.5rem;
+	}
+
+	.fields {
+		display: grid;
+		gap: 1rem;
+		margin-top: 0.5rem;
+	}
+
+	.fields + .fields {
+		margin-top: 1.5rem;
+		padding-top: 1.5rem;
+		border-top: 1px solid var(--gray-800);
+	}
+
+	label {
+		display: flex;
+		flex-direction: column;
+		gap: 0.375rem;
+		color: var(--gray-200);
+		font-size: var(--text-sm);
+	}
+
+	input,
+	select {
+		font: inherit;
+		color: var(--gray-0);
+		background: var(--gray-999);
+		border: 1px solid var(--gray-700, var(--gray-800));
+		border-radius: 0.5rem;
+		padding: 0.625rem 0.75rem;
+		transition: border-color var(--theme-transition);
+	}
+
+	input:focus,
+	select:focus {
+		outline: 2px solid var(--accent-regular);
+		outline-offset: 1px;
+		border-color: var(--accent-regular);
+	}
+
+	.q {
+		margin-top: 1rem;
+		color: var(--gray-100);
+		font-weight: 500;
+	}
+
+	.choices {
+		display: flex;
+		gap: 1.5rem;
+		flex-wrap: wrap;
+		margin-top: 0.5rem;
+	}
+
+	.choices.column {
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.radio {
+		flex-direction: row;
+		align-items: center;
+		gap: 0.5rem;
+		color: var(--gray-200);
+		font-size: var(--text-base, 1rem);
+		cursor: pointer;
+	}
+
+	.radio input {
+		width: auto;
+		accent-color: var(--accent-regular);
+	}
+
+	.child-block {
+		margin-top: 1.5rem;
+		padding: 1.25rem;
+		border: 1px dashed var(--gray-700, var(--gray-800));
+		border-radius: 1rem;
+	}
+
+	.child-block h4 {
+		margin: 0 0 0.5rem;
+		color: var(--gray-0);
+	}
+
+	.submit {
+		align-self: flex-start;
+		font-family: var(--font-brand);
+		font-weight: 500;
+		font-size: var(--text-md);
+		color: var(--accent-text-over);
+		background: var(--accent-regular);
+		border: 0;
+		border-radius: 999rem;
+		padding: 0.75rem 2rem;
+		cursor: pointer;
+		box-shadow: var(--shadow-md);
+		transition: background-color var(--theme-transition);
+	}
+
+	.submit:hover:not(:disabled) {
+		background: var(--accent-dark);
+	}
+
+	.submit:disabled {
+		opacity: 0.6;
+		cursor: default;
+	}
+
+	.form-error {
+		color: var(--accent-text-over);
+		background: var(--accent-dark);
+		padding: 0.75rem 1rem;
+		border-radius: 0.75rem;
+	}
+
+	.success {
+		padding: 2rem;
+		border: 1px solid var(--gray-800);
+		border-radius: 1.5rem;
+		background: var(--gradient-subtle);
+		box-shadow: var(--shadow-sm);
+	}
+
+	.success h3 {
+		color: var(--gray-0);
+	}
+
+	@media (min-width: 50em) {
+		.fields {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+</style>
