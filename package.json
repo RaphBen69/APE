@@ -7,7 +7,9 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "deploy": "npm run build && python scripts/deploy.py",
+    "deploy:dry": "python scripts/deploy.py --dry-run"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
